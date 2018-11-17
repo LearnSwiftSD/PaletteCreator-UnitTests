@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jxc-7H-HLM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Dzx-4U-wdq">
+            <objects>
+                <navigationController id="4wh-GH-7H2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cn7-ov-iRC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ozy-SR-Q44" kind="relationship" relationship="rootViewController" id="M4W-eo-qhK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3j4-7p-qrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4058" y="-976"/>
+        </scene>
+        <!--Palette Entry View Controller-->
+        <scene sceneID="qQP-qN-t2H">
+            <objects>
+                <viewController id="ozy-SR-Q44" customClass="PaletteEntryViewController" customModule="PaletteCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0SY-Bf-Cwt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UPI-bs-YCm">
+                                <rect key="frame" x="20" y="135.5" width="560" height="329.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Palette Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bQn-KV-93v">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uOp-q0-wOn">
+                                        <rect key="frame" x="0.0" y="38" width="560" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMl-2L-oXh" customClass="ColorSelectButton" customModule="PaletteCreator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="bMl-2L-oXh" secondAttribute="height" multiplier="1:1" id="3EM-DL-4Qx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="colorButtonTapped:" destination="ozy-SR-Q44" eventType="touchUpInside" id="89X-Dd-i1Z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMF-Cq-bMq" customClass="ColorSelectButton" customModule="PaletteCreator" customModuleProvider="target">
+                                                <rect key="frame" x="114" y="0.0" width="104" height="104"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="colorButtonTapped:" destination="ozy-SR-Q44" eventType="touchUpInside" id="phh-2n-y5K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJq-Hk-C3S" customClass="ColorSelectButton" customModule="PaletteCreator" customModuleProvider="target">
+                                                <rect key="frame" x="228" y="0.0" width="104" height="104"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="colorButtonTapped:" destination="ozy-SR-Q44" eventType="touchUpInside" id="XLE-pM-IIa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-da-8Cu" customClass="ColorSelectButton" customModule="PaletteCreator" customModuleProvider="target">
+                                                <rect key="frame" x="342" y="0.0" width="104" height="104"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="colorButtonTapped:" destination="ozy-SR-Q44" eventType="touchUpInside" id="wGQ-Ac-tTJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8g-yB-KLE" customClass="ColorSelectButton" customModule="PaletteCreator" customModuleProvider="target">
+                                                <rect key="frame" x="456" y="0.0" width="104" height="104"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal">
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="colorButtonTapped:" destination="ozy-SR-Q44" eventType="touchUpInside" id="6cm-WH-RRS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hVk-LT-eiZ">
+                                        <rect key="frame" x="0.0" y="150" width="560" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="r" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmt-jC-YQi">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KZy-FX-vZK">
+                                                <rect key="frame" x="-2" y="24.5" width="564" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderValueDidChange:" destination="ozy-SR-Q44" eventType="valueChanged" id="jFc-Rb-dLe"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="RqK-vP-95D">
+                                        <rect key="frame" x="0.0" y="212.5" width="560" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="g" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2C-ia-eGh">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uTI-v1-h56">
+                                                <rect key="frame" x="-2" y="24.5" width="564" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderValueDidChange:" destination="ozy-SR-Q44" eventType="valueChanged" id="bhb-bt-cVI"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ntH-Up-KsR">
+                                        <rect key="frame" x="0.0" y="275" width="560" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="b" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHL-fk-ZY2">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8iN-Ib-lFd">
+                                                <rect key="frame" x="-2" y="24.5" width="564" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderValueDidChange:" destination="ozy-SR-Q44" eventType="valueChanged" id="L59-bS-wBu"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UPI-bs-YCm" firstAttribute="centerY" secondItem="0SY-Bf-Cwt" secondAttribute="centerY" id="CgG-BZ-FlC"/>
+                            <constraint firstItem="0MN-mn-FCW" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="UPI-bs-YCm" secondAttribute="bottom" constant="4" id="IKI-Zw-Ube"/>
+                            <constraint firstItem="UPI-bs-YCm" firstAttribute="leading" secondItem="0MN-mn-FCW" secondAttribute="leading" constant="20" id="WxO-7Z-mMO"/>
+                            <constraint firstItem="UPI-bs-YCm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0MN-mn-FCW" secondAttribute="top" constant="4" id="nD6-T4-ZBn"/>
+                            <constraint firstItem="0MN-mn-FCW" firstAttribute="trailing" secondItem="UPI-bs-YCm" secondAttribute="trailing" constant="20" id="qJ2-6W-NWI"/>
+                            <constraint firstItem="UPI-bs-YCm" firstAttribute="centerX" secondItem="0SY-Bf-Cwt" secondAttribute="centerX" id="vs8-Lb-03m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0MN-mn-FCW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2h9-5r-Qx1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mCw-Nl-RSk">
+                            <connections>
+                                <action selector="cancelTapped:" destination="ozy-SR-Q44" id="bz3-2b-IFX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cQ8-6i-T23">
+                            <connections>
+                                <action selector="saveTapped:" destination="ozy-SR-Q44" id="i9m-sv-gt8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="mCw-Nl-RSk" id="pFc-kk-HxQ"/>
+                        <outlet property="nameTextField" destination="bQn-KV-93v" id="efC-5E-tM9"/>
+                        <outlet property="saveButton" destination="cQ8-6i-T23" id="iXh-x1-Tbc"/>
+                        <outletCollection property="labels" destination="xmt-jC-YQi" collectionClass="NSMutableArray" id="qaA-78-c56"/>
+                        <outletCollection property="labels" destination="s2C-ia-eGh" collectionClass="NSMutableArray" id="XoL-M3-HLj"/>
+                        <outletCollection property="labels" destination="BHL-fk-ZY2" collectionClass="NSMutableArray" id="9a3-fv-7vJ"/>
+                        <outletCollection property="sliders" destination="KZy-FX-vZK" collectionClass="NSMutableArray" id="0mL-t5-NKt"/>
+                        <outletCollection property="sliders" destination="uTI-v1-h56" collectionClass="NSMutableArray" id="qds-lB-QbI"/>
+                        <outletCollection property="sliders" destination="8iN-Ib-lFd" collectionClass="NSMutableArray" id="0gT-Lw-cB3"/>
+                        <outletCollection property="colorButtons" destination="bMl-2L-oXh" collectionClass="NSMutableArray" id="M0t-LB-Ctl"/>
+                        <outletCollection property="colorButtons" destination="ZMF-Cq-bMq" collectionClass="NSMutableArray" id="mPr-DI-a3g"/>
+                        <outletCollection property="colorButtons" destination="aJq-Hk-C3S" collectionClass="NSMutableArray" id="AFJ-UT-SBI"/>
+                        <outletCollection property="colorButtons" destination="rfb-da-8Cu" collectionClass="NSMutableArray" id="3QT-PA-gL0"/>
+                        <outletCollection property="colorButtons" destination="E8g-yB-KLE" collectionClass="NSMutableArray" id="r1x-cL-v5g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NWz-3d-Lhi" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4887" y="-976"/>
+        </scene>
+        <!--Palettes-->
+        <scene sceneID="IGm-d8-bhD">
+            <objects>
+                <tableViewController id="b2Y-ZB-WBz" customClass="PaletteTableViewController" customModule="PaletteCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Esi-yj-xaJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="paletteCellId" rowHeight="100" id="FBN-fq-JpA" customClass="PaletteTableViewCell" customModule="PaletteCreator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBN-fq-JpA" id="gP8-Qb-Lo3">
+                                    <rect key="frame" x="0.0" y="0.0" width="562" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EAz-wZ-3gV">
+                                            <rect key="frame" x="20" y="8" width="522" height="83.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Palette Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZN-pf-mPV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="522" height="4.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="RlE-Rs-c4Y">
+                                                    <rect key="frame" x="0.0" y="8.5" width="522" height="75"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhN-lm-i63" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="104.5" height="75"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" none="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                                    <integer key="value" value="0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                                    <color key="value" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buH-U4-MAv" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                                            <rect key="frame" x="104.5" y="0.0" width="104.5" height="75"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" none="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                                    <color key="value" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2O-oG-vhE" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                                            <rect key="frame" x="209" y="0.0" width="104" height="75"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" none="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                                    <integer key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                                    <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WnP-L9-RcS" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                                            <rect key="frame" x="313" y="0.0" width="104.5" height="75"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" none="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                                    <integer key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                                    <color key="value" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="us3-gY-9DJ" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                                            <rect key="frame" x="417.5" y="0.0" width="104.5" height="75"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" none="YES"/>
+                                                                <bool key="isElement" value="YES"/>
+                                                            </accessibility>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                                    <color key="value" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="EAz-wZ-3gV" secondAttribute="bottom" priority="999" constant="8" id="2Ed-7g-FkZ"/>
+                                        <constraint firstItem="EAz-wZ-3gV" firstAttribute="leading" secondItem="gP8-Qb-Lo3" secondAttribute="leading" constant="20" id="Bb8-n5-jBj"/>
+                                        <constraint firstAttribute="trailing" secondItem="EAz-wZ-3gV" secondAttribute="trailing" constant="20" id="Rbc-Lj-Exz"/>
+                                        <constraint firstItem="EAz-wZ-3gV" firstAttribute="top" secondItem="gP8-Qb-Lo3" secondAttribute="top" priority="999" constant="8" id="xAW-2K-tXm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="SZN-pf-mPV" id="1zh-fN-hou"/>
+                                    <outletCollection property="colorViews" destination="fhN-lm-i63" collectionClass="NSMutableArray" id="Nof-oZ-04b"/>
+                                    <outletCollection property="colorViews" destination="buH-U4-MAv" collectionClass="NSMutableArray" id="F6N-pj-1Sf"/>
+                                    <outletCollection property="colorViews" destination="g2O-oG-vhE" collectionClass="NSMutableArray" id="bTh-Kc-EAu"/>
+                                    <outletCollection property="colorViews" destination="WnP-L9-RcS" collectionClass="NSMutableArray" id="1ha-vt-Enw"/>
+                                    <outletCollection property="colorViews" destination="us3-gY-9DJ" collectionClass="NSMutableArray" id="gYF-TS-JLO"/>
+                                    <segue destination="cNM-Cy-a4A" kind="show" id="BQh-Qw-1ei"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b2Y-ZB-WBz" id="cwF-HQ-VN4"/>
+                            <outlet property="delegate" destination="b2Y-ZB-WBz" id="rni-Zp-SBq"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Aem-gg-fuQ"/>
+                        <barButtonItem title="Delete All" id="NAf-bc-0Dw">
+                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deleteAllPalettesTapped" destination="b2Y-ZB-WBz" id="tOJ-yB-hqv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="8ZF-FB-Hhi"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Palettes" id="G6z-zZ-D4d">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="3lv-wG-8Sm">
+                            <connections>
+                                <segue destination="4wh-GH-7H2" kind="presentation" id="LbT-bb-nVf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="3lv-wG-8Sm" id="5Fs-CR-2kk"/>
+                        <outlet property="deleteAllButton" destination="NAf-bc-0Dw" id="SPo-9l-3nf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vsb-6p-WUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468" y="-108.39580209895054"/>
+        </scene>
+        <!--Palette Detail View Controller-->
+        <scene sceneID="BQC-R3-V0o">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="cNM-Cy-a4A" customClass="PaletteDetailViewController" customModule="PaletteCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CDZ-fa-aMA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JID-Rm-aR0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-Og-0Ra" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="107"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                <color key="value" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKD-Qq-P9I" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="107" width="600" height="107.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                <color key="value" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9C6-pt-MP2" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="214.5" width="600" height="107"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8A-HY-gY5" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="321.5" width="600" height="107.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                <color key="value" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFi-ew-60h" customClass="ColorView" customModule="PaletteCreator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="429" width="600" height="107"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paletteIndex">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="paletteColor">
+                                                <color key="value" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JID-Rm-aR0" firstAttribute="leading" secondItem="2ex-Mc-iJk" secondAttribute="leading" id="aYt-lL-PWA"/>
+                            <constraint firstItem="2ex-Mc-iJk" firstAttribute="bottom" secondItem="JID-Rm-aR0" secondAttribute="bottom" id="btz-Bb-nCT"/>
+                            <constraint firstItem="JID-Rm-aR0" firstAttribute="top" secondItem="2ex-Mc-iJk" secondAttribute="top" id="uHR-WW-T0t"/>
+                            <constraint firstItem="2ex-Mc-iJk" firstAttribute="trailing" secondItem="JID-Rm-aR0" secondAttribute="trailing" id="yfY-Y4-HDT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2ex-Mc-iJk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="voj-KA-4vD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="JYk-Xf-tJ2">
+                            <connections>
+                                <segue destination="4wh-GH-7H2" kind="presentation" modalTransitionStyle="flipHorizontal" id="dli-dT-d5j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="JYk-Xf-tJ2" id="ScV-kG-ICp"/>
+                        <outletCollection property="colorViews" destination="Jz3-Og-0Ra" collectionClass="NSMutableArray" id="b5q-Ah-Jn8"/>
+                        <outletCollection property="colorViews" destination="mKD-Qq-P9I" collectionClass="NSMutableArray" id="hyD-R0-UZj"/>
+                        <outletCollection property="colorViews" destination="9C6-pt-MP2" collectionClass="NSMutableArray" id="5MP-xQ-hgI"/>
+                        <outletCollection property="colorViews" destination="T8A-HY-gY5" collectionClass="NSMutableArray" id="1R1-EL-WSQ"/>
+                        <outletCollection property="colorViews" destination="NFi-ew-60h" collectionClass="NSMutableArray" id="erl-wT-pJ1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tS-rl-9pc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3441" y="-108"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AOf-zO-WjY">
+            <objects>
+                <navigationController toolbarHidden="NO" id="Jxc-7H-HLM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l6d-jE-B6u">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gMf-0v-aVH">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="b2Y-ZB-WBz" kind="relationship" relationship="rootViewController" id="UhW-vM-JFj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3j-Fw-lwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1518" y="-108"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dli-dT-d5j"/>
+    </inferredMetricsTieBreakers>
+</document>
